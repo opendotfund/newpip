@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPip</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="description" content="myPip - Bring your ideas to life with our custom AI agent framework. The future is agentic.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app" style="display: flex; flex-direction: column; min-height: 100vh;">
+
+        <!-- Header -->
+        <header style="position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); z-index: 50; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+                <nav style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div style="display: flex; align-items: center;">
+                        <a href="#" aria-label="myPip Home">
+                            <img src="https://i.ibb.co/Z7WbWCC/961c1fc9-d767-4df2-a3f0-e93971cab875-removebg-preview.png" alt="myPip Logo" style="height: 64px; margin-right: 16px;">
+                        </a>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <a href="https://myPip.dev" class="btn btn-secondary">Login</a>
+                        <a href="https://myPip.dev" class="btn btn-primary">Sign Up</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main style="flex-grow: 1; padding-top: 80px;">
+            <!-- Hero Prompt Section -->
+            <section id="hero-prompt" style="height: 100vh; display: flex; align-items: center; justify-content: center; margin-top: -80px;">
+                <div style="width: 100%; max-width: 768px; padding: 0 24px;">
+                    <div class="chatbox-container">
+                        <input type="text" placeholder="describe your app idea" class="chatbox-input" id="chat-input">
+                        <input type="file" id="file-input" accept="image/*" style="display: none;">
+                        <div class="chatbox-actions">
+                            <button type="button" class="chatbox-btn" onclick="document.getElementById('file-input').click()">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                                </svg>
+                            </button>
+                            <a href="https://myPip.dev" class="chatbox-btn-primary">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px;">
+                <div style="max-width: 1024px; margin: 0 auto; text-align: center;">
+                     <h2 class="font-heading" style="font-size: 2.25rem; font-weight: 600; margin-bottom: 24px;">A Truly Agentic Framework</h2>
+                     <p style="max-width: 768px; margin: 0 auto 64px; font-size: 1.125rem; color: var(--brand-text-secondary);">
+                         myPip provides a custom agentic framework that seamlessly integrates with your favorite tools. Build, deploy, and manage your AI applications with unparalleled ease and power. Automate workflows, connect to data sources, and even handle in-app purchases directly from the App Store.
+                     </p>
+                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                        <div class="feature-card">
+                             <div class="feature-icon"><i data-lucide="cpu" style="width: 32px; height: 32px;"></i></div>
+                             <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin: 24px 0 12px;">Deploy to Apple App Store and Google Play Store</h3>
+                             <p style="color: var(--brand-text-secondary);">Easily monetize your apps with built-in StoreKit2 integration. Publish directly to both app stores with comprehensive guides and automated deployment workflows.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i data-lucide="github" style="width: 32px; height: 32px;"></i></div>
+                            <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin: 24px 0 12px;">GitHub Integration</h3>
+                            <p style="color: var(--brand-text-secondary);">Connect your repos for continuous integration and deployment.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i data-lucide="users" style="width: 32px; height: 32px;"></i></div>
+                            <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin: 24px 0 12px;">Clerk Auth</h3>
+                            <p style="color: var(--brand-text-secondary);">Secure user authentication out-of-the-box.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i data-lucide="database" style="width: 32px; height: 32px;"></i></div>
+                            <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin: 24px 0 12px;">Supabase Backend</h3>
+                            <p style="color: var(--brand-text-secondary);">A powerful open-source Firebase alternative for your data.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i data-lucide="workflow" style="width: 32px; height: 32px;"></i></div>
+                            <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin: 24px 0 12px;">n8n Workflows</h3>
+                            <p style="color: var(--brand-text-secondary);">Automate complex processes with visual workflow editing.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i data-lucide="shopping-cart" style="width: 32px; height: 32px;"></i></div>
+                            <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin: 24px 0 12px;">StoreKit2 Integration</h3>
+                            <p style="color: var(--brand-text-secondary);">Enable monetization through the App Store with native StoreKit2 integration.</p>
+                        </div>
+                     </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 96px;">
+                <h2 class="font-heading" style="font-size: 2.25rem; font-weight: 600; text-align: center; margin-bottom: 48px;">Choose Your Plan</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1024px; margin: 0 auto;">
+
+                    <!-- myPip Pro -->
+                    <div class="pricing-card">
+                        <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                            <img src="favicon.png" alt="myPip Logo" style="height: 24px; width: 24px;">
+                            <span>myPip Pro</span>
+                        </h3>
+                        <div style="height: 80px;">
+                            <p style="font-size: 2.25rem; font-weight: 600; margin-bottom: 4px;">$31<span style="font-size: 1rem; font-weight: 400; color: var(--brand-text-secondary);">/mo</span></p>
+                        </div>
+                        <ul style="margin: 32px 0; color: var(--brand-text-secondary);">
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>1,000 prompts per month</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>25 App Morphs</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>20 Monthly Remixes</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Advanced AI features</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Priority support</li>
+                        </ul>
+                        <a href="https://myPip.dev" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Select Plan</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="pricing-card">
+                        <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                            <img src="favicon.png" alt="myPip Logo" style="height: 24px; width: 24px;">
+                            <span>Enterprise</span>
+                        </h3>
+                        <div style="height: 80px;">
+                           <p style="font-size: 2.25rem; font-weight: 600; margin-bottom: 4px;">$62.50<span style="font-size: 1rem; font-weight: 400; color: var(--brand-text-secondary);">/mo</span></p>
+                        </div>
+                        <ul style="margin: 32px 0; color: var(--brand-text-secondary);">
+                           <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>10,000 build credits</li>
+                           <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>100 App Morphs</li>
+                           <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>100 Monthly Remixes</li>
+                           <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Priority support</li>
+                           <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Advanced analytics</li>
+                        </ul>
+                        <a href="https://myPip.dev" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Select Plan</a>
+                    </div>
+                    
+                    <!-- Enterprise Plus -->
+                    <div class="pricing-card-highlighted">
+                        <div style="position: absolute; top: 0; right: 24px; margin-top: -12px;">
+                            <span style="background: var(--brand-primary); color: white; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 9999px;">Most Popular</span>
+                        </div>
+                        <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                           <img src="favicon.png" alt="myPip Logo" style="height: 24px; width: 24px;">
+                            <span>Enterprise Plus</span>
+                        </h3>
+                        <div style="height: 80px;">
+                            <p style="font-size: 2.25rem; font-weight: 600; margin-bottom: 4px;">$77<span style="font-size: 1rem; font-weight: 400; color: var(--brand-text-secondary);">/mo</span></p>
+                            <p style="color: var(--brand-text-secondary); font-size: 0.875rem;">then 1 cent per credit</p>
+                        </div>
+                        <ul style="margin: 32px 0; color: var(--brand-text-secondary);">
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>10,000 credits included</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Unlimited remixes</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Unlimited App Morphs</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Dedicated support</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 16px;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--brand-primary); margin-right: 12px;"></i>Highest priority access</li>
+                        </ul>
+                        <a href="https://myPip.dev" class="btn btn-primary" style="width: 100%; margin-top: auto;">Select Plan</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- About Us Section -->
+            <section id="about" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px;">
+                <div style="max-width: 1024px; margin: 0 auto; text-align: center;">
+                    <h2 class="font-heading" style="font-size: 2.25rem; font-weight: 600; margin-bottom: 32px;">The Team Behind the Agents</h2>
+                    <p style="font-size: 1.125rem; color: var(--brand-text-secondary); margin-bottom: 40px;">
+                        We've been developing our custom agentic phone application framework since January and we are excited to share it with the world.
+                    </p>
+                    <div class="team-container" style="display: flex; flex-direction: column; gap: 32px; align-items: stretch; justify-content: center;">
+                        <!-- Misha Stastna -->
+                        <div class="glass-surface team-card" style="padding: 24px; text-align: left; width: 100%; display: flex; flex-direction: column;">
+                            <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; color: var(--brand-text-primary);">Misha Stastna</h4>
+                            <p style="color: var(--brand-text-secondary); margin-bottom: 16px;">Co-Founder & CEO</p>
+                            <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--brand-border);">
+                                <a href="mailto:m3stastn@uwaterloo.ca" style="display: flex; align-items: center; font-size: 0.875rem; color: var(--brand-text-secondary); margin-bottom: 12px;">
+                                    <i data-lucide="mail" style="width: 16px; height: 16px; margin-right: 8px; flex-shrink: 0;"></i>
+                                    <span>m3stastn@uwaterloo.ca</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/misha-stastna-b93192335" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; font-size: 0.875rem; color: var(--brand-text-secondary);">
+                                    <i data-lucide="linkedin" style="width: 16px; height: 16px; margin-right: 8px; flex-shrink: 0;"></i>
+                                    <span>LinkedIn Profile</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- David Song -->
+                        <div class="glass-surface team-card" style="padding: 24px; text-align: left; width: 100%; display: flex; flex-direction: column;">
+                           <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; color: var(--brand-text-primary);">David Song</h4>
+                           <p style="color: var(--brand-text-secondary); margin-bottom: 16px;">Co-Founder & CMO</p>
+                           <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--brand-border);">
+                                <span style="display: flex; align-items: center; font-size: 0.875rem; color: #6B7280; cursor: not-allowed;">
+                                    <i data-lucide="mail" style="width: 16px; height: 16px; margin-right: 8px; flex-shrink: 0;"></i>
+                                    <span>Contact details soon</span>
+                                </span>
+                                <span style="display: flex; align-items: center; font-size: 0.875rem; color: #6B7280; cursor: not-allowed;">
+                                   <i data-lucide="linkedin" style="width: 16px; height: 16px; margin-right: 8px; flex-shrink: 0;"></i>
+                                   <span>Contact details soon</span>
+                               </span>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section id="community" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px;">
+                 <div style="max-width: 1024px; margin: 0 auto; text-align: center;">
+                    <h2 class="font-heading" style="font-size: 2.25rem; font-weight: 600; margin-bottom: 24px;">Join the Community</h2>
+                    <p style="font-size: 1.125rem; color: var(--brand-text-secondary); margin: 16px 0 64px;">
+                        Explore builds from the community. Remix them, build off the ideas, or edit them to your liking.
+                    </p>
+                </div>
+                <div id="community-pips-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1024px; margin: 0 auto;">
+                    <div style="grid-column: 1 / -1; text-align: center; color: var(--brand-text-secondary); display: flex; justify-content: center; align-items: center; height: 192px;">
+                        <i data-lucide="loader-2" style="width: 32px; height: 32px; animation: spin 1s linear infinite;"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px;">
+                <div style="max-width: 1024px; margin: 0 auto;">
+                    <h2 class="font-heading" style="font-size: 2.25rem; font-weight: 600; text-align: center; margin-bottom: 64px;">Frequently Asked Questions</h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <!-- Vibe Coding Tool - What is it? -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">What is Vibe Coding Tool?</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <p style="color: var(--brand-text-secondary);">Vibe Coding Tool is an advanced iOS development platform that combines the power of AI with intuitive design tools. It's more than just an IDE - it's a comprehensive solution that bridges the gap between idea and deployment.</p>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What exactly is it?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Vibe is an AI-powered iOS development platform that combines visual design tools, code generation, and intelligent assistance. It's not just an IDE or a design tool - it's a complete ecosystem that helps you build, test, and deploy iOS applications faster than ever before.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">Who is it for?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Vibe is designed for iOS developers of all skill levels - from beginners who want to learn app development to experienced professionals looking to accelerate their workflow. Whether you're working with SwiftUI, React Native, or Flutter, Vibe provides the tools you need to succeed.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What problem does it solve?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Vibe addresses the common pain points in iOS development: slow development cycles, complex UI design processes, and the steep learning curve for new developers. It streamlines your workflow from concept to App Store submission, reducing development time by up to 70%.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- How Does it Work? -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">How Does it Work?</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What's the core functionality?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Vibe uses a combination of AI assistance, visual programming, and drag-and-drop interfaces. Our AI understands your requirements and generates clean, production-ready code while our visual tools let you design interfaces intuitively. The platform includes real-time preview, automated testing, and seamless deployment integration.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">How will it make my coding life easier?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Vibe accelerates development through AI-powered code generation, reduces bugs with intelligent error detection, enhances creativity with visual design tools, and improves collaboration through built-in version control and sharing features. You'll spend less time on repetitive tasks and more time on innovation.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What's the workflow like?</h4>
+                                    <p style="color: var(--brand-text-secondary);">From idea to deployment, Vibe streamlines every step: Start with our AI-powered idea validation, design your UI with visual tools, generate code automatically, test with our integrated testing suite, and deploy directly to the App Store. The entire process is guided and optimized for success.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- What are APP MORPHS? -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">What are APP MORPHS?</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <p style="color: var(--brand-text-secondary);">You'll find out soon when we ship and release our self morphing application.</p>
+                            </div>
+                        </div>
+
+                        <!-- App Store Publishing -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Can I post the Pips (or apps) that I make here on myPip to the App Store or Google Play Store?</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <p style="color: var(--brand-text-secondary);">Yes! And we've simplified the process for our users and included comprehensive guides to walk users through the steps it takes to get approved and go live on the Apple App Store and Google Play Store.</p>
+                            </div>
+                        </div>
+
+                        <!-- Coding Framework -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">What coding framework are my apps built in?</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <p style="color: var(--brand-text-secondary);">Users have the choice between our custom agentic framework for Flutter/React Native apps or our Custom SwiftUI framework which uses a mix of Deepseek V3 and a customized LangChain framework.</p>
+                            </div>
+                        </div>
+
+                        <!-- What Do I Do Next? -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">What Do I Do Next?</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">How do I get started?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Getting started is simple! Sign up for our free tier and start building immediately. No credit card required. Our comprehensive onboarding process will guide you through your first app creation in minutes.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What's the commitment?</h4>
+                                    <p style="color: var(--brand-text-secondary);">We offer flexible subscription plans with no long-term commitments. Start with our free tier (5 prompts per day), upgrade when you're ready for more features, and cancel anytime. We also offer a free trial of our Pro features to help you decide.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">Where can I go for more information?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Visit our <a href="/docs" style="color: var(--brand-primary); text-decoration: underline;">documentation</a> for detailed guides, check out our <a href="/tutorials" style="color: var(--brand-primary); text-decoration: underline;">video tutorials</a>, or join our <a href="/community" style="color: var(--brand-primary); text-decoration: underline;">community forum</a> to connect with other developers.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">Is there a free version or trial?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Yes! Our free tier includes 5 prompts per day, basic AI assistance, and access to our core features. We also offer a 14-day free trial of our Pro plan so you can experience the full power of Vibe before committing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing and Value -->
+                        <div class="faq-item" onclick="toggleFAQ(this)">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Pricing and Value</h3>
+                                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer hidden">
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What are the different pricing tiers?</h4>
+                                    <div style="color: var(--brand-text-secondary);">
+                                        <p style="margin-bottom: 8px;"><strong>Free Tier:</strong> 5 prompts per day, basic AI assistance, core features</p>
+                                        <p style="margin-bottom: 8px;"><strong>Pro Plan:</strong> 1,000 prompts, 25 App Morphs, 20 Monthly Remixes, advanced AI features</p>
+                                        <p style="margin-bottom: 8px;"><strong>Enterprise:</strong> 10,000 build credits, 100 App Morphs, 100 Monthly Remixes, priority support</p>
+                                        <p style="margin-bottom: 8px;"><strong>Enterprise Plus:</strong> Unlimited remixes, 10,000 credits then 1 cent per credit after, unlimited App Morphs, dedicated support</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">What's the long-term value?</h4>
+                                    <p style="color: var(--brand-text-secondary);">Learning to code apps with Vibe is an investment in your future. Mobile apps are the most personal and frequently used tools in our daily lives. Think about how often you reach for your phone instead of your laptop - for quick calculations, currency conversions, or checking information. Apps solve real problems that users face every day, and building these solutions can translate to significant revenue.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-heading" style="font-size: 1.125rem; font-weight: 600; margin: 8px 0; color: var(--brand-text-primary);">Why mobile apps matter</h4>
+                                    <p style="color: var(--brand-text-secondary);">Mobile apps are much more personal for users and are often used way more than computers out of convenience. Think of how many times you're doing work on your laptop and pull out your phone instead to look up a currency conversion, do a quick calculation, or check the weather. Our phones are the productivity tools we use every day without even realizing it. Building tools on phones for problems users really have can translate to real revenue and meaningful impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer style="background: var(--brand-surface); border-top: 1px solid var(--brand-border);">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px;">
+                <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center;">
+                        <img src="https://i.ibb.co/Z7WbWCC/961c1fc9-d767-4df2-a3f0-e93971cab875-removebg-preview.png" alt="myPip Logo" style="height: 32px; margin-right: 16px;">
+                        <p style="font-size: 0.875rem; color: var(--brand-text-secondary);">&copy; 2024 myPip. All rights reserved.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 24px; margin-top: 16px;">
+                        <a href="https://www.linkedin.com/company/mypip" target="_blank" rel="noopener noreferrer" style="color: var(--brand-text-secondary);">
+                            <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+                        </a>
+                        <a href="https://twitter.com/myPipdev" target="_blank" rel="noopener noreferrer" style="color: var(--brand-text-secondary);">
+                            <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                        </a>
+                        <a href="https://instagram.com/myPipdev" target="_blank" rel="noopener noreferrer" style="color: var(--brand-text-secondary);">
+                            <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

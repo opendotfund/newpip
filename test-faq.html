@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 20px;
+            background: var(--brand-background);
+            color: var(--brand-text-primary);
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>FAQ Test - Click to Expand</h1>
+        
+        <!-- Test FAQ Item -->
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Test Question 1</h3>
+                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                    <path d="m6 9 6 6 6-6"/>
+                </svg>
+            </div>
+            <div class="faq-answer hidden">
+                <p style="color: var(--brand-text-secondary);">This is a test answer to verify the FAQ functionality is working correctly. If you can see this, the FAQ is working!</p>
+            </div>
+        </div>
+        
+        <!-- Test FAQ Item 2 -->
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Test Question 2</h3>
+                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                    <path d="m6 9 6 6 6-6"/>
+                </svg>
+            </div>
+            <div class="faq-answer hidden">
+                <p style="color: var(--brand-text-secondary);">This is another test answer to verify that only one FAQ item can be open at a time.</p>
+            </div>
+        </div>
+        
+        <!-- Test FAQ Item 3 -->
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Test Question 3</h3>
+                <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-text-secondary); transition: transform 0.3s;">
+                    <path d="m6 9 6 6 6-6"/>
+                </svg>
+            </div>
+            <div class="faq-answer hidden">
+                <p style="color: var(--brand-text-secondary);">This is a third test answer. The FAQ should now be working properly!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple FAQ Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0A0A0A;
+            color: white;
+            padding: 20px;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+        .faq-item:hover {
+            background: rgba(255,255,255,0.08);
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #A1A1AA;
+        }
+        .faq-answer.hidden {
+            display: none;
+        }
+        .faq-answer:not(.hidden) {
+            display: block;
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple FAQ Test - Click to Expand</h1>
+    
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <h3>Test Question 1</h3>
+        <div class="faq-answer hidden">
+            <p>This is answer 1. If you can see this, it's working!</p>
+        </div>
+    </div>
+    
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <h3>Test Question 2</h3>
+        <div class="faq-answer hidden">
+            <p>This is answer 2. Only one should be open at a time.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <h3>Test Question 3</h3>
+        <div class="faq-answer hidden">
+            <p>This is answer 3. The FAQ should now work!</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleFAQ(element) {
+            console.log('FAQ clicked:', element);
+            
+            const answer = element.querySelector('.faq-answer');
+            const isExpanded = element.classList.contains('expanded');
+            
+            // Close all FAQ items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                item.classList.remove('expanded');
+                const itemAnswer = item.querySelector('.faq-answer');
+                if (itemAnswer) {
+                    itemAnswer.classList.add('hidden');
+                }
+            });
+            
+            // If not expanded, expand it
+            if (!isExpanded) {
+                element.classList.add('expanded');
+                answer.classList.remove('hidden');
+                console.log('Opening FAQ');
+            }
+            
+            console.log('Final state:', element.classList.contains('expanded'));
+        }
+        
+        // Initialize - hide all answers
+        document.addEventListener('DOMContentLoaded', () => {
+            const answers = document.querySelectorAll('.faq-answer');
+            answers.forEach(answer => {
+                answer.classList.add('hidden');
+            });
+            console.log('FAQ initialized');
+        });
+    </script>
+</body>
+</html> 

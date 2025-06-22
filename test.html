@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Test</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 20px;
+            background: var(--brand-background);
+            color: var(--brand-text-primary);
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>FAQ Test</h1>
+        
+        <!-- Test FAQ Item -->
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Test Question</h3>
+                <i data-lucide="chevron-down" style="width: 24px; height: 24px; color: var(--brand-text-secondary); transition: transform 0.3s;"></i>
+            </div>
+            <div class="faq-answer hidden">
+                <p style="color: var(--brand-text-secondary);">This is a test answer to verify the FAQ functionality is working correctly.</p>
+            </div>
+        </div>
+        
+        <!-- Test FAQ Item 2 -->
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 class="font-heading" style="font-size: 1.25rem; font-weight: 600; color: var(--brand-text-primary);">Another Test Question</h3>
+                <i data-lucide="chevron-down" style="width: 24px; height: 24px; color: var(--brand-text-secondary); transition: transform 0.3s;"></i>
+            </div>
+            <div class="faq-answer hidden">
+                <p style="color: var(--brand-text-secondary);">This is another test answer to verify that only one FAQ item can be open at a time.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
